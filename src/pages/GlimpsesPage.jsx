@@ -37,7 +37,7 @@ export default function GlimpsesPage({ onOpenDonate, onNavigateHome }) {
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: 'Glimpses of Seva - Janswabhiman Welfare Society',
+        title: 'Glimpses of Seva - Jan Swabhiman Welfare Society',
         text: 'A visual journal of real seva on the ground by JSWS across India.',
         url: window.location.href,
       }).catch(() => {});

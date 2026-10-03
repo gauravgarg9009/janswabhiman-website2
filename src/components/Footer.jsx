@@ -200,7 +200,7 @@ export default function Footer({ onOpenDonate, onOpenVolunteer, setActiveTab, na
         {/* Bottom Bar: Copyright & Legal */}
         <div className="pt-8 border-t border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 font-sans">
           <div>
-            © 2026 Janswabhiman Welfare Society. All rights reserved.
+            © 2026 Jan Swabhiman Welfare Society. All rights reserved.
           </div>
 
           <div className="flex flex-wrap items-center gap-6">

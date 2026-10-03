@@ -6,11 +6,11 @@ export default function CausesSection({ onSelectStory, onNavigateToBlog }) {
   const [currentCauseIndex, setCurrentCauseIndex] = useState(0);
 
   const featuredCause = storiesData.find(s => s.slug === 'classrooms-of-hope') || {
-    title: "Janswabhiman's Classrooms of Hope",
+    title: "Jan Swabhiman's Classrooms of Hope",
     category: "FEATURED CAUSE",
     subCategory: "Education",
     image: "/images/blog/classrooms-of-hope/hero.webp",
-    desc: "The blackboard may be small, but the dreams of the children it holds are infinite. At Janswabhiman Welfare Society's Shiksha Centres, education is not just a privilege — it is a rebirth, a re-awakening of self-worth, dignity and hope."
+    desc: "The blackboard may be small, but the dreams of the children it holds are infinite. At Jan Swabhiman Welfare Society's Shiksha Centres, education is not just a privilege — it is a rebirth, a re-awakening of self-worth, dignity and hope."
   };
 
   const cause1 = storiesData.find(s => s.slug === 'kanya-poojan-tribal') || {

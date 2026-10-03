@@ -37,7 +37,7 @@ export default function WhyUsSection({ onOpenDonate }) {
             Turning Neglect into Care, Despair into <span className="text-brand-red">Strength</span>
           </h2>
           <p className="text-gray-600 text-base md:text-lg">
-            At Janswabhiman Welfare Society, we believe our country cannot afford theatrics in the name of activism. We need serious, long-term, professional efforts.
+            At Jan Swabhiman Welfare Society, we believe our country cannot afford theatrics in the name of activism. We need serious, long-term, professional efforts.
           </p>
         </div>
 

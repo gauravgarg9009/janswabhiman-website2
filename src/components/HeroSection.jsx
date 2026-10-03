@@ -96,7 +96,7 @@ export default function HeroSection({ onOpenDonate, onOpenGlimpses }) {
           {/* Exact Rendered Figma Frame 4078 (node 158:1794) with Notched Container */}
           <img
             src="/assets/hero_mobile_frame_4078.png"
-            alt="Janswabhiman Hero Mobile"
+            alt="Jan Swabhiman Hero Mobile"
             className="w-full h-auto object-contain block mx-auto drop-shadow-xl"
           />
 

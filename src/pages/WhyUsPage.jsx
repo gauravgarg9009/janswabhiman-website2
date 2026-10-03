@@ -43,7 +43,7 @@ export default function WhyUsPage({ onOpenDonate, onNavigateHome }) {
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: 'Why Us - Janswabhiman Welfare Society',
+        title: 'Why Us - Jan Swabhiman Welfare Society',
         text: 'Discover why JSWS is distinct: grounded processes, Dharma, and unwavering action.',
         url: window.location.href,
       }).catch(() => {});
@@ -92,7 +92,7 @@ export default function WhyUsPage({ onOpenDonate, onNavigateHome }) {
               Ground Reality • Long-term Processes
             </span>
             <h2 className="font-heading font-black text-4xl text-white leading-tight">
-              Because Janswabhiman Welfare Society stands not just for service, but for Dharma, स्वाभिमान, and सांस्कृतिक गौरव.
+              Because Jan Swabhiman Welfare Society stands not just for service, but for Dharma, स्वाभिमान, and सांस्कृतिक गौरव.
             </h2>
             <p className="font-sans text-white/95 text-base leading-relaxed">
               Established in 2006, Jan Swabhiman Welfare Society has expanded its horizon in the last 10 years in multiple domains of Seva. Led by <strong>Shri Vashi Sharma</strong> (IIT Bombay alumnus, ex-faculty IIT Kanpur, INSPIRE Faculty Awardee, Govt of India), JSWS carries out extensive ground operations across 50 districts in India.
@@ -179,7 +179,7 @@ export default function WhyUsPage({ onOpenDonate, onNavigateHome }) {
             </p>
 
             <p>
-              At Janswabhiman Welfare Society, we believe in Seva with <strong>श्रद्धा and integrity</strong>. Every initiative at JSWS is guided by Dharma, transparency, and respect. Service is sacred, accountable, and deeply Bhartiya in spirit — uplifting not just lives, but hearts and heritage.
+              At Jan Swabhiman Welfare Society, we believe in Seva with <strong>श्रद्धा and integrity</strong>. Every initiative at JSWS is guided by Dharma, transparency, and respect. Service is sacred, accountable, and deeply Bhartiya in spirit — uplifting not just lives, but hearts and heritage.
             </p>
 
             <div className="pt-4 flex items-center justify-center">

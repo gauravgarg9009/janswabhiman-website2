@@ -269,7 +269,7 @@ export default function Navbar({
                 />
                 <div className="text-left">
                   <span className="font-heading font-black text-sm text-[#CC444B] block leading-tight">
-                    Janswabhiman
+                    Jan Swabhiman
                   </span>
                   <span className="font-heading font-bold text-xs text-gray-700 block leading-tight">
                     Welfare Society

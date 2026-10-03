@@ -15,12 +15,12 @@ export default function MainHeader({ onOpenDonate, onOpenVolunteer, onNavigateHo
         >
           <img 
             src="/assets/jsws_logo_v2_1_141_10045.png" 
-            alt="Janswabhiman Welfare Society" 
+            alt="Jan Swabhiman Welfare Society" 
             className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain shrink-0"
           />
           <div className="text-left">
             <h1 className="font-heading font-extrabold text-[15px] sm:text-2xl md:text-[38px] text-black leading-tight sm:leading-[1.15]">
-              Janswabhiman
+              Jan Swabhiman
             </h1>
             <h2 className="font-heading font-extrabold text-[13px] sm:text-xl md:text-[34px] text-black leading-tight sm:leading-[1.15]">
               Welfare Society
