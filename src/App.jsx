@@ -17,6 +17,8 @@ import DonateModal from './components/DonateModal';
 import VolunteerModal from './components/VolunteerModal';
 import StoryModal from './components/StoryModal';
 import GlimpsesModal from './components/GlimpsesModal';
+import DonationReminderNudge from './components/DonationReminderNudge';
+import programsData from './data/programs.json';
 
 // Dedicated Pages
 import AboutUsPage from './pages/AboutUsPage';
@@ -81,6 +83,37 @@ export default function App() {
   const [isGlimpsesOpen, setIsGlimpsesOpen] = useState(false);
   const [selectedStory, setSelectedStory] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // 10-second initial donation popup & continuous reminder popup logic
+  const [showReminderNudge, setShowReminderNudge] = useState(false);
+  const [initialPopupShownFor, setInitialPopupShownFor] = useState({});
+
+  useEffect(() => {
+    const isEligiblePage = route.page === 'home' || route.page === 'program';
+    if (!isEligiblePage) {
+      setShowReminderNudge(false);
+      return;
+    }
+
+    const pageKey = route.page === 'program' ? `program-${route.slug}` : 'home';
+
+    // If initial popup has not been shown yet on this page visit, trigger after 10 seconds
+    if (!initialPopupShownFor[pageKey]) {
+      const timer = setTimeout(() => {
+        setIsDonateOpen(true);
+        setInitialPopupShownFor(prev => ({ ...prev, [pageKey]: true }));
+        setShowReminderNudge(true);
+      }, 10000);
+
+      return () => clearTimeout(timer);
+    } else {
+      setShowReminderNudge(true);
+    }
+  }, [route.page, route.slug, initialPopupShownFor]);
+
+  const currentProgram = route.page === 'program' 
+    ? programsData.find(p => p.slug === route.slug)
+    : null;
 
   // Sync with browser back/forward buttons
   useEffect(() => {
@@ -358,6 +391,13 @@ export default function App() {
       <GlimpsesModal 
         isOpen={isGlimpsesOpen} 
         onClose={() => setIsGlimpsesOpen(false)} 
+      />
+
+      {/* 7. Gentle Continuous Donation Reminder Pop-up */}
+      <DonationReminderNudge 
+        active={showReminderNudge && !isDonateOpen && (route.page === 'home' || route.page === 'program')}
+        onOpenDonate={() => setIsDonateOpen(true)}
+        projectName={currentProgram?.title}
       />
     </div>
   );

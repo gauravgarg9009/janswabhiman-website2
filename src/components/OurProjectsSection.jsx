@@ -87,43 +87,63 @@ export default function OurProjectsSection({ onSelectStory, onNavigateToProgram 
             <div
               key={project.slug}
               onClick={() => handleProjectClick(project)}
-              className="bg-white rounded-[24px] p-8 text-black shadow-figma-card flex flex-col justify-between text-left group hover:-translate-y-2 transition-all duration-300 relative cursor-pointer"
+              className="relative rounded-[28px] overflow-hidden p-7 text-white shadow-2xl flex flex-col justify-between text-left group hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] transition-all duration-300 cursor-pointer min-h-[480px] border border-white/20"
             >
-              <div>
-                {/* Large Centered Black Icon */}
-                <div className="h-32 flex items-center justify-center mb-6">
-                  <img
-                    src={project.icon}
-                    alt={project.title}
-                    className="max-h-20 max-w-[80px] object-contain group-hover:scale-110 transition-transform duration-300"
-                  />
+              {/* Background Image with Rich Red-to-Dark Gradient matching Dedicated Page */}
+              <div className="absolute inset-0 z-0">
+                <img
+                  src={project.heroImage}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                />
+                {/* Dark gradient for crisp text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/35 group-hover:via-black/50 transition-colors duration-300" />
+                {/* Brand crimson gradient tint matching dedicated page */}
+                <div className="absolute inset-0 bg-gradient-to-b from-red-950/70 via-transparent to-black/85" />
+              </div>
+
+              {/* Card Top & Body Content */}
+              <div className="relative z-10 space-y-4">
+                {/* Top Row: Translucent glass icon badge + Sanskrit quote badge */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center p-2.5 shadow-md group-hover:bg-white/30 group-hover:scale-105 transition-all">
+                    <img
+                      src={project.icon}
+                      alt={project.title}
+                      className="w-full h-full object-contain brightness-0 invert drop-shadow"
+                    />
+                  </div>
+
+                  {project.sanskrit && (
+                    <div className="inline-flex items-center bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/25 text-amber-200 text-[11px] font-heading font-bold shadow-xs truncate max-w-[190px]">
+                      <span className="truncate">"{project.sanskrit}"</span>
+                    </div>
+                  )}
                 </div>
 
-                {/* Subtle Red Gradient Line */}
-                <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#CC444B]/40 to-transparent mb-4"></div>
+                {/* Title & Description */}
+                <div className="space-y-2 pt-2">
+                  <h3 className="font-heading font-black text-[21px] text-white leading-snug drop-shadow-md group-hover:text-amber-200 transition-colors line-clamp-2">
+                    {project.title}
+                  </h3>
 
-                {/* Project Title */}
-                <h3 className="font-heading font-extrabold text-[20px] text-black leading-snug mb-2 group-hover:text-[#CC444B] transition-colors line-clamp-2">
-                  {project.title}
-                </h3>
+                  {project.meaning && (
+                    <p className="font-sans text-[11.5px] text-amber-100/90 italic line-clamp-1">
+                      — {project.meaning}
+                    </p>
+                  )}
 
-                {/* Sanskrit motto snippet */}
-                {project.sanskrit && (
-                  <p className="font-heading text-xs text-[#CC444B] font-bold italic mb-3">
-                    "{project.sanskrit}"
+                  <p className="font-sans text-xs text-white/90 line-clamp-3 leading-relaxed drop-shadow-xs">
+                    {project.description}
                   </p>
-                )}
-
-                <p className="font-sans text-xs text-gray-600 line-clamp-3 leading-relaxed">
-                  {project.description}
-                </p>
+                </div>
               </div>
 
               {/* Read More Pill Button with Circular Arrow */}
-              <div className="pt-6">
-                <div className="inline-flex items-center gap-2.5 bg-[#CC444B] group-hover:bg-red-700 text-white font-heading font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full shadow transition-all">
+              <div className="relative z-10 pt-6">
+                <div className="inline-flex items-center gap-2.5 bg-white hover:bg-gray-100 text-[#243C4B] group-hover:bg-amber-400 group-hover:text-gray-950 font-heading font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-lg transition-all">
                   <span>Explore Programme</span>
-                  <div className="w-6 h-6 rounded-full bg-white text-[#CC444B] flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-[#CC444B] group-hover:bg-gray-950 text-white flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">
                     <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
                   </div>
                 </div>
@@ -166,36 +186,59 @@ export default function OurProjectsSection({ onSelectStory, onNavigateToProgram 
         {/* Mobile Project Card */}
         <div 
           onClick={() => handleProjectClick(currentMobileProject)}
-          className="bg-white rounded-[24px] p-6 text-black shadow-2xl text-left space-y-4 cursor-pointer"
+          className="relative rounded-[28px] overflow-hidden p-7 text-white shadow-2xl text-left space-y-4 cursor-pointer min-h-[460px] flex flex-col justify-between border border-white/20"
         >
-          <div className="h-28 flex items-center justify-center">
+          {/* Background image & gradient */}
+          <div className="absolute inset-0 z-0">
             <img
-              src={currentMobileProject.icon}
+              src={currentMobileProject.heroImage}
               alt={currentMobileProject.title}
-              className="max-h-20 object-contain"
+              className="w-full h-full object-cover object-center"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-black/35" />
+            <div className="absolute inset-0 bg-gradient-to-b from-red-950/70 via-transparent to-black/85" />
           </div>
 
-          <div className="h-[1.5px] w-full bg-[#CC444B]/20"></div>
+          <div className="relative z-10 space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center p-2.5 shadow-md">
+                <img
+                  src={currentMobileProject.icon}
+                  alt={currentMobileProject.title}
+                  className="w-full h-full object-contain brightness-0 invert drop-shadow"
+                />
+              </div>
 
-          <h3 className="font-heading font-extrabold text-xl text-black leading-snug">
-            {currentMobileProject.title}
-          </h3>
+              {currentMobileProject.sanskrit && (
+                <div className="inline-flex items-center bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/25 text-amber-200 text-[11px] font-heading font-bold shadow-xs">
+                  <span>"{currentMobileProject.sanskrit}"</span>
+                </div>
+              )}
+            </div>
 
-          {currentMobileProject.sanskrit && (
-            <p className="font-heading text-xs text-[#CC444B] font-bold italic">
-              "{currentMobileProject.sanskrit}"
-            </p>
-          )}
+            <div className="space-y-2 pt-2">
+              <h3 className="font-heading font-black text-2xl text-white leading-snug drop-shadow-md">
+                {currentMobileProject.title}
+              </h3>
 
-          <p className="font-sans text-xs text-gray-700 leading-relaxed line-clamp-3">
-            {currentMobileProject.description}
-          </p>
+              {currentMobileProject.meaning && (
+                <p className="font-sans text-xs text-amber-100/90 italic">
+                  — {currentMobileProject.meaning}
+                </p>
+              )}
 
-          <div className="pt-2">
-            <div className="inline-flex items-center gap-2 bg-[#CC444B] text-white font-heading font-bold text-xs px-5 py-2.5 rounded-full shadow">
+              <p className="font-sans text-xs sm:text-sm text-white/90 leading-relaxed line-clamp-3 drop-shadow-xs">
+                {currentMobileProject.description}
+              </p>
+            </div>
+          </div>
+
+          <div className="relative z-10 pt-4">
+            <div className="inline-flex items-center gap-2 bg-white text-[#243C4B] font-heading font-bold text-xs px-5 py-2.5 rounded-full shadow-lg">
               <span>Explore Programme</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <div className="w-5 h-5 rounded-full bg-[#CC444B] text-white flex items-center justify-center">
+                <ArrowUpRight className="w-3 h-3 stroke-[2.5]" />
+              </div>
             </div>
           </div>
         </div>

@@ -89,32 +89,86 @@ export default function HeroSection({ onOpenDonate, onOpenGlimpses }) {
       </div>
 
       {/* ========================================================================= */}
-      {/* MOBILE / TABLET HERO: Exact Figma node 158:1794 (Frame 4078)              */}
+      {/* MOBILE / TABLET HERO: Crisp Native UI (Figma Frame 4078 / Node 158:1794)  */}
       {/* ========================================================================= */}
       <div className="block lg:hidden px-3 sm:px-6">
-        <div className="relative w-full max-w-[360px] mx-auto">
-          {/* Exact Rendered Figma Frame 4078 (node 158:1794) with Notched Container */}
-          <img
-            src="/assets/hero_mobile_frame_4078.png"
-            alt="Jan Swabhiman Hero Mobile"
-            className="w-full h-auto object-contain block mx-auto drop-shadow-xl"
-          />
+        <div className="w-full max-w-[360px] sm:max-w-[400px] mx-auto bg-[#CC444B] rounded-[28px] sm:rounded-[32px] pt-7 pb-6 px-5 text-white text-center space-y-4 shadow-2xl relative overflow-hidden">
+          
+          {/* Title: Nunito 24px-27px, 800 bold, line-height 31px-35px */}
+          <h1 className="font-heading font-extrabold text-[24px] sm:text-[27px] leading-[31px] sm:leading-[35px] text-white tracking-tight whitespace-pre-line drop-shadow-xs">
+            Building Dignity.{"\n"}Creating Opportunity.{"\n"}Empowering Lives.
+          </h1>
 
-          {/* Interactive Button Hotspot: Donate Now (Figma Frame 20 / 158:1841) */}
-          <button
-            onClick={onOpenDonate}
-            className="absolute left-[7.08%] top-[31.52%] w-[42.92%] h-[8.84%] rounded-[7px] cursor-pointer focus:outline-none hover:bg-black/5 active:scale-95 transition-all"
-            aria-label="Donate Now"
-            title="Donate Now"
-          />
+          {/* Description: Nunito Sans 12.5px-13.5px, line-height 19px-21px */}
+          <p className="font-sans font-normal text-[12.5px] sm:text-[13.5px] leading-[19px] sm:leading-[21px] text-white/95 max-w-[305px] mx-auto">
+            We work alongside underserved communities to create access to education, livelihoods, rehabilitation, and essential support—helping people build more secure and self-reliant futures.
+          </p>
 
-          {/* Interactive Button Hotspot: Glimpses of Seva (Figma Frame 21 / 158:1846) */}
-          <button
-            onClick={onOpenGlimpses}
-            className="absolute left-[50.23%] top-[31.84%] w-[46.0%] h-[8.52%] rounded-full cursor-pointer focus:outline-none hover:bg-white/10 active:scale-95 transition-all"
-            aria-label="Glimpses of Seva"
-            title="Glimpses of Seva"
-          />
+          {/* Interactive Buttons Row */}
+          <div className="flex items-center justify-center gap-3 pt-1">
+            
+            {/* Donate Now Button: crisp white pill button with heart SVG icon */}
+            <button
+              onClick={onOpenDonate}
+              className="w-[136px] h-[40px] bg-white hover:bg-gray-50 active:scale-95 text-[#243C4B] rounded-[8px] flex items-center justify-between px-3 shadow-[0px_4px_12px_rgba(0,0,0,0.12)] transition-all group cursor-pointer"
+            >
+              <span className="font-sans font-black text-[11px] leading-none uppercase tracking-wider text-[#243C4B]">
+                Donate Now
+              </span>
+              <div className="w-[20px] h-[20px] flex items-center justify-center shrink-0">
+                <img 
+                  src="/assets/frame_9_141_9547.svg" 
+                  alt="Heart" 
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform" 
+                />
+              </div>
+            </button>
+
+            {/* Glimpses of Seva Button */}
+            <button
+              onClick={onOpenGlimpses}
+              className="h-[40px] flex items-center gap-2 text-white hover:text-white/85 active:scale-95 transition-all cursor-pointer group"
+            >
+              <div className="w-[32px] h-[32px] rounded-full bg-white text-[#243C4B] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform shrink-0">
+                <Play className="w-3.5 h-3.5 fill-[#243C4B] translate-x-0.5" />
+              </div>
+              <span className="font-heading font-semibold text-[13px] text-white underline-offset-4 group-hover:underline">
+                Glimpses of Seva
+              </span>
+            </button>
+
+          </div>
+
+          {/* Circular Collage Image: High-Resolution 1107px retina asset */}
+          <div className="pt-2 flex justify-center">
+            <div className="relative w-[270px] h-[270px] sm:w-[290px] sm:h-[290px] rounded-full overflow-hidden shadow-[0px_8px_24px_rgba(0,0,0,0.3)] border-2 border-white/20">
+              <img 
+                src="/assets/hero_circular_collage_hd.png" 
+                alt="Jan Swabhiman Seva Activities" 
+                className="w-full h-full object-cover" 
+              />
+            </div>
+          </div>
+
+          {/* Donors Counter Bottom: Vector Group 3263 (Node 158:1851) */}
+          <div className="pt-1 flex items-center justify-center gap-3">
+            <div className="w-[125px] h-[52px] shrink-0">
+              <img 
+                src="/assets/group_3263_158_1851.svg" 
+                alt="Donors Avatars" 
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-200" 
+              />
+            </div>
+            <div className="text-left">
+              <span className="font-heading font-black italic text-white text-[15px] block leading-tight">
+                500+ Donors
+              </span>
+              <span className="text-white/90 text-[11px] block leading-tight font-sans">
+                supporting seva that creates impact
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
 

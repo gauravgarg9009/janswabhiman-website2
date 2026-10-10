@@ -25,3 +25,9 @@ dist-ssr
 
 # Agent config
 .agents
+
+# Delivery archives & packages
+*.zip
+client-package*
+Shaurya Website*
+

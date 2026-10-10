@@ -102,7 +102,7 @@ export default function WhyUsPage({ onOpenDonate, onNavigateHome }) {
           <div className="col-span-4 flex justify-center">
             <div className="w-72 h-72 rounded-full overflow-hidden shadow-2xl border-4 border-white/20">
               <img 
-                src="/assets/ellipse_11_252_799.png" 
+                src="/assets/hero_circular_collage_hd.png" 
                 alt="JSWS Seva Ground Work" 
                 className="w-full h-full object-cover"
               />
@@ -215,7 +215,7 @@ export default function WhyUsPage({ onOpenDonate, onNavigateHome }) {
           </h2>
           <div className="w-56 h-56 rounded-full overflow-hidden shadow-lg mx-auto border-2 border-white/30">
             <img 
-              src="/assets/ellipse_11_252_799.png" 
+              src="/assets/hero_circular_collage_hd.png" 
               alt="JSWS Seva Work" 
               className="w-full h-full object-cover"
             />
